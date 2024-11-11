@@ -49,11 +49,11 @@ import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.TurbineStatCalculator;
 import gregtech.api.util.shutdown.ShutDownReason;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
+import gregtech.common.pollution.Pollution;
 import gtPlusPlus.api.objects.Logger;
 import gtPlusPlus.api.objects.minecraft.BlockPos;
 import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.util.math.MathUtils;
-import gtPlusPlus.core.util.minecraft.gregtech.PollutionUtils;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.MTEHatchTurbine;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GTPPMultiBlockBase;
 import gtPlusPlus.xmod.gregtech.api.objects.GTPPRenderedTexture;
@@ -152,9 +152,6 @@ public abstract class MTELargerTurbineBase extends GTPPMultiBlockBase<MTELargerT
             .addInfo("Right-click with screwdriver to enable loose fit")
             .addInfo("Optimal flow will increase or decrease depending on fitting")
             .addInfo("Loose fit increases flow in exchange for efficiency");
-        if (getTurbineType().contains("Steam")) {
-            tt.addInfo("XL Steam Turbines can use Loose Mode with either Slow or Fast Mode");
-        }
         if (getTurbineType().equals("Plasma")) {
             tt.addInfo("Plasma fuel efficiency is lower for high tier turbines when using low-grade plasmas")
                 .addInfo("Efficiency = ((FuelValue / 200,000)^2) / (EU per Turbine)");
@@ -659,7 +656,8 @@ public abstract class MTELargerTurbineBase extends GTPPMultiBlockBase<MTELargerT
             mPollution += aPollutionLevel * getPollutionMultiplier() * mufflerReduction;
             for (MTEHatchMuffler tHatch : validMTEList(mMufflerHatches)) {
                 if (mPollution >= 10000) {
-                    if (PollutionUtils.addPollution(this.getBaseMetaTileEntity(), 10000)) {
+                    if (GTMod.gregtechproxy.mPollution) {
+                        Pollution.addPollution(this.getBaseMetaTileEntity(), 10000);
                         mPollution -= 10000;
                     }
                 } else {
