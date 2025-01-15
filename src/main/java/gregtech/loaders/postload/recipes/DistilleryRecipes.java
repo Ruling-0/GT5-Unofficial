@@ -23,6 +23,7 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipeBuilder;
 import gregtech.api.util.GTUtility;
+import gtPlusPlus.core.util.minecraft.FluidUtils;
 
 public class DistilleryRecipes implements Runnable {
 
@@ -701,6 +702,20 @@ public class DistilleryRecipes implements Runnable {
             GTValues.NI,
             600,
             120);
+
+        addUniversalDistillationRecipe(
+            Materials.HydrochloricAcid.getFluid(2000),
+            new FluidStack[] { FluidUtils.getFluidStack("hydrogenchloride", 1000), Materials.Water.getFluid(1000) },
+            GTValues.NI,
+            600,
+            120);
+
+        addUniversalDistillationRecipe(
+            Materials.HydrofluoricAcid.getFluid(2000),
+            new FluidStack[] { FluidUtils.getHydrofluoricAcid(1000), Materials.Water.getFluid(1000) },
+            GTValues.NI,
+            600,
+            480);
 
         // C3H6O = C2H2O + CH4
         addUniversalDistillationRecipe(

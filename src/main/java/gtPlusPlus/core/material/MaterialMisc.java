@@ -224,7 +224,7 @@ public final class MaterialMisc {
             new MaterialStack(MaterialsOres.CROCROITE, 1), new MaterialStack(MaterialsOres.NICHROMITE, 1),
             new MaterialStack(MaterialsOres.ZIRCON, 1), new MaterialStack(MaterialsElements.STANDALONE.GRANITE, 1),
             new MaterialStack(MaterialsElements.STANDALONE.BLACK_METAL, 1),
-            new MaterialStack(MaterialsElements.STANDALONE.RUNITE, 1) });
+            new MaterialStack(MaterialsElements.getInstance().NEODYMIUM, 1) });
 
     public static final Material RARE_EARTH_HIGH = new Material(
         "Rare Earth (III)", // Material Name

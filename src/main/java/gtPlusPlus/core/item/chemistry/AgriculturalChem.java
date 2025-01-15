@@ -574,14 +574,13 @@ public class AgriculturalChem extends ItemPackage {
             .itemInputs(ItemUtils.getSimpleStack(aManureByprod, 4), GTUtility.getIntegratedCircuit(20))
             .itemOutputs(
                 GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Phosphorus, 2L),
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Calcium, 2L),
+                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Gypsum, 8L),
                 GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Copper, 1L),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L),
                 ItemUtils.getSimpleStack(dustDirt, 1),
                 ItemUtils.getItemStackOfAmountFromOreDict("dustTinyAmmoniumNitrate", 1))
             .outputChances(2500, 2500, 750, 1000, 5000, 250)
             .fluidInputs(Materials.SulfuricAcid.getFluid(250))
-            .fluidOutputs(FluidUtils.getFluidStack("sulfuricapatite", 50))
             .duration(20 * SECONDS)
             .eut(TierEU.RECIPE_MV / 2)
             .addTo(centrifugeRecipes);

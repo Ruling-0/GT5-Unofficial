@@ -273,19 +273,6 @@ public class RecipesGregTech {
             .eut(TierEU.RECIPE_LuV)
             .metadata(CHEMPLANT_CASING_TIER, 6)
             .addTo(chemicalPlantRecipes);
-
-        // Refine GT HF into GT++ HF
-        if (FluidUtils.doesHydrofluoricAcidGtExist()) {
-            GTValues.RA.stdBuilder()
-                .itemInputs(CI.getNumberedAdvancedCircuit(22))
-                .fluidInputs(FluidUtils.getHydrofluoricAcid(2000), FluidUtils.getHydrofluoricAcidGT(5000))
-                .fluidOutputs(FluidUtils.getHydrofluoricAcid(4500))
-                .duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV)
-                .metadata(CHEMPLANT_CASING_TIER, 3)
-                .addTo(chemicalPlantRecipes);
-
-        }
     }
 
     private static void fluidHeaterRecipes() {
@@ -1368,28 +1355,6 @@ public class RecipesGregTech {
             .duration(10 * SECONDS)
             .eut(TierEU.RECIPE_MV / 2)
             .addTo(distillationTowerRecipes);
-
-        // Apatite Distillation
-        /*
-         * so if you dissolve aparite in sulphuric acid you'll get a mixture of SO2, H2O, HF and HCl
-         */
-
-        RA.stdBuilder()
-            .fluidInputs(FluidUtils.getFluidStack("sulfuricapatite", 5200))
-            .fluidOutputs(
-                FluidUtils.getFluidStack("sulfurousacid", 3800),
-                FluidUtils.getFluidStack("hydrogenchloride", 1000),
-                FluidUtils.getFluidStack("hydrofluoricacid", 400))
-            .duration(45 * SECONDS)
-            .eut(TierEU.RECIPE_MV)
-            .addTo(distillationTowerRecipes);
-
-        RA.stdBuilder()
-            .fluidInputs(FluidUtils.getFluidStack("sulfurousacid", 1000))
-            .fluidOutputs(Materials.SulfurDioxide.getGas(500), Materials.Water.getFluid(500))
-            .duration(10 * SECONDS)
-            .eut(TierEU.RECIPE_MV / 2)
-            .addTo(distillationTowerRecipes);
     }
 
     private static void thermalBoilerRecipes() {
@@ -1575,17 +1540,6 @@ public class RecipesGregTech {
     }
 
     private static void chemicalReactorRecipes() {
-
-        RA.stdBuilder()
-            .itemInputs(
-                CI.getNumberedAdvancedCircuit(21),
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 32L))
-            .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Sulfur, 8L))
-            .fluidInputs(FluidUtils.getFluidStack("sulfuricacid", 4000))
-            .fluidOutputs(FluidUtils.getFluidStack("sulfuricapatite", 8000))
-            .duration(20 * SECONDS)
-            .eut(TierEU.RECIPE_LV)
-            .addTo(UniversalChemical);
 
         // KOH + HNO3 = KNO3 + H2O
         RA.stdBuilder()
