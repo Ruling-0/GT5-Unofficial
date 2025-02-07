@@ -23,7 +23,7 @@ public final class MaterialMisc {
         MaterialUtils.generateSpecialDustAndAssignToAMaterial(SODIUM_CYANIDE, false);
         MaterialUtils.generateSpecialDustAndAssignToAMaterial(COPPER_SULFATE, false);
         MaterialUtils.generateSpecialDustAndAssignToAMaterial(COPPER_SULFATE_HYDRATED, false);
-        WATER.registerComponentForMaterial(FluidUtils.getWater(1000));
+        WATER.registerComponentForMaterial(Materials.Water.getFluid(1000L));
     }
 
     public static final Material POTASSIUM_NITRATE = new Material(

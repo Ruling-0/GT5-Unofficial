@@ -33,34 +33,6 @@ public class FluidUtils {
 
     private static final HashMap<String, Fluid> sFluidCache = new HashMap<>();
 
-    public static FluidStack getWater(final int amount) {
-        return FluidUtils.getFluidStack("water", amount);
-    }
-
-    public static FluidStack getDistilledWater(final int amount) {
-        return FluidUtils.getFluidStack("ic2distilledwater", amount);
-    }
-
-    public static FluidStack getHotWater(final int amount) {
-        return FluidUtils.getFluidStack("ic2hotwater", amount);
-    }
-
-    public static FluidStack getLava(final int amount) {
-        return FluidUtils.getFluidStack("lava", amount);
-    }
-
-    public static FluidStack getPahoehoeLava(final int amount) {
-        return FluidUtils.getFluidStack("ic2pahoehoelava", amount);
-    }
-
-    public static FluidStack getSteam(final int amount) {
-        return FluidUtils.getFluidStack("steam", amount);
-    }
-
-    public static FluidStack getSuperHeatedSteam(final int amount) {
-        return FluidUtils.getFluidStack("ic2superheatedsteam", amount);
-    }
-
     public static FluidStack getHydrofluoricAcid(int amount) {
         return FluidUtils.getFluidStack("hydrofluoricacid", amount);
     }

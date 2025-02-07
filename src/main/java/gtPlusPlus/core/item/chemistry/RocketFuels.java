@@ -180,7 +180,7 @@ public class RocketFuels extends ItemPackage {
             .itemInputs(GTUtility.getIntegratedCircuit(8))
             .itemOutputs(ItemUtils.getSimpleStack(Ammonium_Nitrate_Dust, 8))
             .fluidInputs(FluidUtils.getFluidStack(Hydrated_Ammonium_Nitrate_Slurry, 8 * 144))
-            .fluidOutputs(FluidUtils.getWater(2000))
+            .fluidOutputs(Materials.Water.getFluid(2000L))
             .eut(TierEU.RECIPE_HV)
             .duration(1 * MINUTES + 30 * SECONDS)
             .addTo(chemicalDehydratorRecipes);
@@ -224,7 +224,7 @@ public class RocketFuels extends ItemPackage {
                 FluidUtils.getFluidStack("fluid.hydrazine", 2000),
                 FluidUtils.getFluidStack(Formaldehyde, 2000),
                 FluidUtils.getFluidStack("hydrogen", 4000))
-            .fluidOutputs(FluidUtils.getFluidStack(Unsymmetrical_Dimethylhydrazine, 2000), FluidUtils.getWater(2000))
+            .fluidOutputs(FluidUtils.getFluidStack(Unsymmetrical_Dimethylhydrazine, 2000), Materials.Water.getFluid(2000L))
             .duration(60 * SECONDS)
             .eut(TierEU.RECIPE_MV)
             .metadata(CHEMPLANT_CASING_TIER, 3)

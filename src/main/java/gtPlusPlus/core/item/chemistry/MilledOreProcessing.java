@@ -8,9 +8,11 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.CHEMPLANT_CASING_TIER;
 import static gregtech.api.util.GTRecipeConstants.COIL_HEAT;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.*;
+import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
 import java.util.ArrayList;
 
+import gregtech.api.util.GTModHandler;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
@@ -233,7 +235,7 @@ public class MilledOreProcessing extends ItemPackage {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 64),
                 MaterialsElements.getInstance().GERMANIUM.getDust(15))
             .fluidInputs(FluidUtils.getFluidStack(SphaleriteFlotationFroth, 4000))
-            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), FluidUtils.getWater(2000))
+            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), Materials.Water.getFluid(2000L))
             .eut((int) TierEU.RECIPE_LuV)
             .metadata(COIL_HEAT, 5500)
             .duration(2 * MINUTES)
@@ -250,7 +252,7 @@ public class MilledOreProcessing extends ItemPackage {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cadmium, 50),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 10))
             .fluidInputs(FluidUtils.getFluidStack(ChalcopyriteFlotationFroth, 4000))
-            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), FluidUtils.getWater(2000))
+            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), Materials.Water.getFluid(2000L))
             .eut((int) TierEU.RECIPE_IV)
             .metadata(COIL_HEAT, 4500)
             .duration(2 * MINUTES)
@@ -266,7 +268,7 @@ public class MilledOreProcessing extends ItemPackage {
                 MaterialsElements.getInstance().RHODIUM.getDust(32),
                 MaterialsElements.getInstance().RUTHENIUM.getDust(16))
             .fluidInputs(FluidUtils.getFluidStack(NickelFlotationFroth, 4000))
-            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), FluidUtils.getWater(2000))
+            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), Materials.Water.getFluid(2000L))
             .eut((int) TierEU.RECIPE_IV)
             .metadata(COIL_HEAT, 4500)
             .duration(2 * MINUTES)
@@ -280,7 +282,7 @@ public class MilledOreProcessing extends ItemPackage {
                 MaterialsElements.getInstance().SELENIUM.getDust(40),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tellurium, 10))
             .fluidInputs(FluidUtils.getFluidStack(PlatinumFlotationFroth, 4000))
-            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), FluidUtils.getWater(2000))
+            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), Materials.Water.getFluid(2000L))
             .eut((int) TierEU.RECIPE_LuV)
             .metadata(COIL_HEAT, 5500)
             .duration(2 * MINUTES)
@@ -296,7 +298,7 @@ public class MilledOreProcessing extends ItemPackage {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Promethium, 20),
                 MaterialsElements.getInstance().HAFNIUM.getDust(10))
             .fluidInputs(FluidUtils.getFluidStack(PentlanditeFlotationFroth, 4000))
-            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), FluidUtils.getWater(2000))
+            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), Materials.Water.getFluid(2000L))
             .eut((int) TierEU.RECIPE_LuV)
             .metadata(COIL_HEAT, 5500)
             .duration(2 * MINUTES)
@@ -313,7 +315,7 @@ public class MilledOreProcessing extends ItemPackage {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Firestone, 45),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Dysprosium, 16))
             .fluidInputs(FluidUtils.getFluidStack(RedstoneFlotationFroth, 4000))
-            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), FluidUtils.getWater(2000))
+            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), Materials.Water.getFluid(2000L))
             .eut((int) TierEU.RECIPE_IV)
             .metadata(COIL_HEAT, 4500)
             .duration(2 * MINUTES)
@@ -329,7 +331,7 @@ public class MilledOreProcessing extends ItemPackage {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 30),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Strontium, 20))
             .fluidInputs(FluidUtils.getFluidStack(SpessartineFlotationFroth, 4000))
-            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), FluidUtils.getWater(2000))
+            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), Materials.Water.getFluid(2000L))
             .eut((int) TierEU.RECIPE_LuV)
             .metadata(COIL_HEAT, 5500)
             .duration(2 * MINUTES)
@@ -345,7 +347,7 @@ public class MilledOreProcessing extends ItemPackage {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 60),
                 MaterialsElements.getInstance().THALLIUM.getDust(15))
             .fluidInputs(FluidUtils.getFluidStack(GrossularFlotationFroth, 4000))
-            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), FluidUtils.getWater(2000))
+            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), Materials.Water.getFluid(2000L))
             .eut((int) TierEU.RECIPE_LuV)
             .metadata(COIL_HEAT, 5500)
             .duration(2 * MINUTES)
@@ -361,7 +363,7 @@ public class MilledOreProcessing extends ItemPackage {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Yttrium, 25),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ytterbium, 15))
             .fluidInputs(FluidUtils.getFluidStack(AlmandineFlotationFroth, 4000))
-            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), FluidUtils.getWater(2000))
+            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), Materials.Water.getFluid(2000L))
             .eut((int) TierEU.RECIPE_LuV)
             .metadata(COIL_HEAT, 5500)
             .duration(2 * MINUTES)
@@ -376,7 +378,7 @@ public class MilledOreProcessing extends ItemPackage {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Borax, 60),
                 MaterialsElements.getInstance().RHENIUM.getDust(20))
             .fluidInputs(FluidUtils.getFluidStack(PyropeFlotationFroth, 4000))
-            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), FluidUtils.getWater(2000))
+            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), Materials.Water.getFluid(2000L))
             .eut((int) TierEU.RECIPE_EV)
             .metadata(COIL_HEAT, 3500)
             .duration(2 * MINUTES)
@@ -389,7 +391,7 @@ public class MilledOreProcessing extends ItemPackage {
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lutetium, 16),
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Europium, 8))
             .fluidInputs(FluidUtils.getFluidStack(MonaziteFlotationFroth, 4000))
-            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), FluidUtils.getWater(2000))
+            .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), Materials.Water.getFluid(2000L))
             .eut((int) TierEU.RECIPE_UV)
             .metadata(COIL_HEAT, 7500)
             // 60s UV instead of 120s ZPM to avoid fusion skip
@@ -634,7 +636,7 @@ public class MilledOreProcessing extends ItemPackage {
                 ItemUtils.getItemStackOfAmountFromOreDict("dustTinyAsh", 5),
                 ItemUtils.getItemStackOfAmountFromOreDict("dustTinyDarkAsh", 5),
                 ItemUtils.getItemStackOfAmountFromOreDict("dustTinyDarkAsh", 5))
-            .fluidInputs(FluidUtils.getSteam(5000))
+            .fluidInputs(GTModHandler.getSteam(5000))
             .fluidOutputs(FluidUtils.getFluidStack(PineOil, 500))
             .duration(60 * SECONDS)
             .eut(TierEU.RECIPE_MV)
@@ -647,7 +649,7 @@ public class MilledOreProcessing extends ItemPackage {
                 ItemUtils.getItemStackOfAmountFromOreDict("dustTinyAsh", 5),
                 ItemUtils.getItemStackOfAmountFromOreDict("dustTinyDarkAsh", 5),
                 ItemUtils.getItemStackOfAmountFromOreDict("dustTinyDarkAsh", 5))
-            .fluidInputs(FluidUtils.getSuperHeatedSteam(5000))
+            .fluidInputs(getFluidStack("ic2superheatedsteam", 5000))
             .fluidOutputs(FluidUtils.getFluidStack(PineOil, 1500))
             .duration(45 * SECONDS)
             .eut(TierEU.RECIPE_MV)

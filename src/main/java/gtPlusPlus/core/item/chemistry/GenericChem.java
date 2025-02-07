@@ -10,6 +10,7 @@ import static gregtech.api.util.GTRecipeConstants.FUEL_TYPE;
 import static gregtech.api.util.GTRecipeConstants.FUEL_VALUE;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalPlantRecipes;
+import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -381,7 +382,7 @@ public class GenericChem extends ItemPackage {
             .itemInputs(GTUtility.getIntegratedCircuit(17), ItemUtils.getSimpleStack(mPotassiumHydroxide, 3))
             .itemOutputs(ItemUtils.getSimpleStack(mPotassiumEthylXanthate, 12))
             .fluidInputs(Materials.Ethanol.getFluid(1000), FluidUtils.getFluidStack(Carbon_Disulfide, 1000))
-            .fluidOutputs(FluidUtils.getWater(1000))
+            .fluidOutputs(Materials.Water.getFluid(1000L))
             .duration(60 * SECONDS)
             .eut(TierEU.RECIPE_MV)
             .metadata(CHEMPLANT_CASING_TIER, 4)
@@ -662,7 +663,7 @@ public class GenericChem extends ItemPackage {
         // Basic Recipe
         GTValues.RA.stdBuilder()
             .itemInputs(getTierOneChip(), ItemUtils.getSimpleStack(Items.rotten_flesh, 64))
-            .fluidInputs(FluidUtils.getHotWater(2000))
+            .fluidInputs(getFluidStack("ic2hotwater", 2000))
             .fluidOutputs(FluidUtils.getFluidStack(Cadaverine, 250), FluidUtils.getFluidStack(Putrescine, 250))
             .duration(2 * MINUTES)
             .eut(TierEU.RECIPE_MV)
@@ -674,7 +675,7 @@ public class GenericChem extends ItemPackage {
                 getTierTwoChip(),
                 ItemUtils.getSimpleStack(Items.rotten_flesh, 128),
                 ItemUtils.simpleMetaStack(AgriculturalChem.mAgrichemItem1, 8, 32))
-            .fluidInputs(FluidUtils.getHotWater(3000))
+            .fluidInputs(getFluidStack("ic2hotwater", 3000))
             .fluidOutputs(FluidUtils.getFluidStack(Cadaverine, 750), FluidUtils.getFluidStack(Putrescine, 750))
             .duration(2 * MINUTES)
             .eut(240)
@@ -706,7 +707,7 @@ public class GenericChem extends ItemPackage {
                 FluidUtils.getFluidStack(Benzene, 5000),
                 FluidUtils.getFluidStack("sulfuricacid", 1000),
                 FluidUtils.getFluidStack("nitricacid", 5000),
-                FluidUtils.getDistilledWater(10000))
+                GTModHandler.getDistilledWater(10000L))
             .fluidOutputs(FluidUtils.getFluidStack(NitroBenzene, 5000))
             .duration(30 * SECONDS)
             .eut(TierEU.RECIPE_HV)

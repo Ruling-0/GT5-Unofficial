@@ -125,7 +125,7 @@ public class RecipeLoaderGlueLine {
             .fluidInputs(
                 MaterialMisc.ETHYL_CYANOACETATE.getFluidStack(100),
                 FluidUtils.getFluidStack(BioRecipes.mFormaldehyde, 100))
-            .fluidOutputs(MaterialMisc.CYANOACRYLATE_POLYMER.getFluidStack(100), FluidUtils.getWater(1000))
+            .fluidOutputs(MaterialMisc.CYANOACRYLATE_POLYMER.getFluidStack(100), Materials.Water.getFluid(1000))
             .duration(10 * SECONDS)
             .eut(TierEU.RECIPE_IV)
             .metadata(CHEMPLANT_CASING_TIER, 5)
@@ -137,7 +137,7 @@ public class RecipeLoaderGlueLine {
                 FluidUtils.getFluidStack("methane", 2000),
                 FluidUtils.getFluidStack("ammonia", 2000),
                 FluidUtils.getFluidStack("oxygen", 6000))
-            .fluidOutputs(MaterialMisc.HYDROGEN_CYANIDE.getFluidStack(2000), FluidUtils.getWater(6000))
+            .fluidOutputs(MaterialMisc.HYDROGEN_CYANIDE.getFluidStack(2000), Materials.Water.getFluid(6000))
             .duration(10 * SECONDS)
             .eut(TierEU.RECIPE_HV)
             .metadata(CHEMPLANT_CASING_TIER, 3)
@@ -153,7 +153,7 @@ public class RecipeLoaderGlueLine {
                 ItemUtils.getItemStackOfAmountFromOreDict("dustSodiumHydroxide", 3))
             .itemOutputs(MaterialMisc.SODIUM_CYANIDE.getDust(3))
             .fluidInputs(MaterialMisc.HYDROGEN_CYANIDE.getFluidStack(1000))
-            .fluidOutputs(FluidUtils.getWater(1000))
+            .fluidOutputs(Materials.Water.getFluid(1000))
             .duration(10 * SECONDS)
             .eut(TierEU.RECIPE_LV)
             .addTo(chemicalReactorRecipes);
@@ -165,7 +165,7 @@ public class RecipeLoaderGlueLine {
                 ItemUtils.getItemStackOfAmountFromOreDict("dustSodiumHydroxide", 3))
             .itemOutputs(MaterialMisc.SODIUM_CYANIDE.getDust(3))
             .fluidInputs(MaterialMisc.HYDROGEN_CYANIDE.getFluidStack(1000))
-            .fluidOutputs(FluidUtils.getWater(1000))
+            .fluidOutputs(Materials.Water.getFluid(1000))
             .duration(10 * SECONDS)
             .eut(TierEU.RECIPE_LV)
             .addTo(multiblockChemicalReactorRecipes);

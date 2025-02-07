@@ -10,12 +10,15 @@ import static gregtech.api.enums.HatchElement.Muffler;
 import static gregtech.api.enums.HatchElement.OutputBus;
 import static gregtech.api.enums.HatchElement.OutputHatch;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
+import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
 import java.util.stream.Stream;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import gregtech.api.enums.Materials;
+import gregtech.api.util.GTModHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -62,11 +65,11 @@ public class MTEThermalBoiler extends GTPPMultiBlockBase<MTEThermalBoiler> imple
     private static final Item itemLavaFilter = ItemList.Component_LavaFilter.getItem();
     private static final Item itemObsidian = Item.getItemFromBlock(Blocks.obsidian);
     private static final Fluid fluidWater = FluidRegistry.WATER;
-    private static final Fluid fluidDistilledWater = FluidUtils.getDistilledWater(1)
+    private static final Fluid fluidDistilledWater = GTModHandler.getDistilledWater(1L)
         .getFluid();
-    private static final Fluid fluidSteam = FluidUtils.getSteam(1)
+    private static final Fluid fluidSteam = GTModHandler.getSteam(1)
         .getFluid();
-    private static final Fluid fluidSHSteam = FluidUtils.getSuperHeatedSteam(1)
+    private static final Fluid fluidSHSteam = getFluidStack("ic2superheatedsteam", 1)
         .getFluid();
 
     public MTEThermalBoiler(int aID, String aName, String aNameRegional) {
@@ -240,8 +243,8 @@ public class MTEThermalBoiler extends GTPPMultiBlockBase<MTEThermalBoiler> imple
 
     private boolean useWater(int steamAmount) {
         // Round up to not dupe decimal amounts of water.
-        int waterAmount = Math.floorDiv(steamAmount + GTValues.STEAM_PER_WATER - 1, GTValues.STEAM_PER_WATER);
-        if (depleteInput(FluidUtils.getWater(waterAmount)) || depleteInput(FluidUtils.getDistilledWater(waterAmount))) {
+        long waterAmount = Math.floorDiv(steamAmount + GTValues.STEAM_PER_WATER - 1, GTValues.STEAM_PER_WATER);
+        if (depleteInput(Materials.Water.getFluid(waterAmount)) || depleteInput(GTModHandler.getDistilledWater(waterAmount))) {
             dryHeatCounter = 0;
             return true;
         } else {

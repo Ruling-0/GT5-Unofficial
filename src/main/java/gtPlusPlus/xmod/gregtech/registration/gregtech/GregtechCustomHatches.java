@@ -41,9 +41,11 @@ import static gregtech.api.enums.MetaTileEntityIDs.Hatch_SuperBus_Output_MV;
 import static gregtech.api.enums.MetaTileEntityIDs.Hatch_SuperBus_Output_UHV;
 import static gregtech.api.enums.MetaTileEntityIDs.Hatch_SuperBus_Output_UV;
 import static gregtech.api.enums.MetaTileEntityIDs.Hatch_SuperBus_Output_ZPM;
+import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
 import gregtech.GTMod;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
+import gregtech.api.util.GTModHandler;
 import gtPlusPlus.api.objects.Logger;
 import gtPlusPlus.core.util.minecraft.FluidUtils;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -121,7 +123,7 @@ public class GregtechCustomHatches {
         // Steam Hatch
         GregtechItemList.Hatch_Input_Steam.set(
             new MTEHatchCustomFluidBase(
-                FluidUtils.getSteam(1)
+                GTModHandler.getSteam(1)
                     .getFluid(), // Fluid to restrict hatch to
                 64000, // Capacity
                 Hatch_Input_Steam.ID, // ID

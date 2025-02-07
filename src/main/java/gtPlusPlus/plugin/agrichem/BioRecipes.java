@@ -22,6 +22,7 @@ import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalPlantRecipes;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.cokeOvenRecipes;
+import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -151,7 +152,7 @@ public class BioRecipes {
             }
         }
 
-        mDistilledWater = FluidUtils.getDistilledWater(1)
+        mDistilledWater = GTModHandler.getDistilledWater(1)
             .getFluid();
         mThermalWater = FluidUtils.getFluidStack("ic2hotwater", 1)
             .getFluid();
@@ -301,7 +302,7 @@ public class BioRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(getBrownAlgaeRecipeChip(), ItemUtils.getSimpleStack(AgriculturalChem.mBrownAlgaeBiosmass, 40))
             .itemOutputs(ItemUtils.getSimpleStack(AgriculturalChem.mSodiumCarbonate, 20))
-            .fluidInputs(FluidUtils.getDistilledWater(2000))
+            .fluidInputs(GTModHandler.getDistilledWater(2000))
             .duration(30 * SECONDS)
             .eut(TierEU.RECIPE_LV)
             .addTo(UniversalChemical);
@@ -857,7 +858,7 @@ public class BioRecipes {
                     ItemUtils.getSimpleStack(
                         AgriculturalChem.mCleanAluminiumMix,
                         (int) (Math.ceil(aOreData3.get(aOreName) * 1.4))))
-                .fluidInputs(FluidUtils.getSteam(2000 * aOreData2.get(aOreName)))
+                .fluidInputs(GTModHandler.getSteam(2000L * aOreData2.get(aOreName)))
                 .fluidOutputs(
                     FluidUtils
                         .getFluidStack(AgriculturalChem.RedMud, 100 * (int) (Math.ceil(aOreData3.get(aOreName) * 1.4))))

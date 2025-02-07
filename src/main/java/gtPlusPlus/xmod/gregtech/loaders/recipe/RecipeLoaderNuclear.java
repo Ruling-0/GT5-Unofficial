@@ -295,7 +295,7 @@ public class RecipeLoaderNuclear {
                 ItemUtils.getItemStackOfAmountFromOreDict("dustSodiumHydroxide", 3))
             .itemOutputs(MaterialsFluorides.SODIUM_FLUORIDE.getDust(2))
             .fluidInputs(FluidUtils.getFluidStack("hydrofluoricacid", 500))
-            .fluidOutputs(FluidUtils.getWater(1000))
+            .fluidOutputs(Materials.Water.getFluid(1000))
             .duration(1 * MINUTES)
             .eut(TierEU.RECIPE_LV)
             .addTo(UniversalChemical);
@@ -306,7 +306,7 @@ public class RecipeLoaderNuclear {
                 ItemUtils.getItemStackOfAmountFromOreDict("dustSodiumHydroxide", 3))
             .itemOutputs(MaterialsFluorides.SODIUM_FLUORIDE.getDust(2))
             .fluidInputs(FluidUtils.getFluidStack("hydrofluoricacid_gt5u", 1000))
-            .fluidOutputs(FluidUtils.getWater(1000))
+            .fluidOutputs(Materials.Water.getFluid(1000))
             .duration(1 * MINUTES)
             .eut(TierEU.RECIPE_LV)
             .addTo(UniversalChemical);

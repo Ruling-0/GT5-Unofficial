@@ -53,7 +53,7 @@ public class CoalTar extends ItemPackage {
                 .itemInputs(CI.getNumberedBioCircuit(17), ItemUtils.getItemStackOfAmountFromOreDict("cellEmpty", 1))
                 .itemOutputs(ItemUtils.getItemStackOfAmountFromOreDict("cellEthylene", 1))
                 .fluidInputs(bioEth1)
-                .fluidOutputs(FluidUtils.getWater(1000))
+                .fluidOutputs(Materials.Water.getFluid(1000L))
                 .eut(80)
                 .duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
@@ -64,7 +64,7 @@ public class CoalTar extends ItemPackage {
                 .itemInputs(CI.getNumberedBioCircuit(18), ItemUtils.getItemStackOfAmountFromOreDict("cellEmpty", 1))
                 .itemOutputs(ItemUtils.getItemStackOfAmountFromOreDict("cellEthylene", 1))
                 .fluidInputs(bioEth2)
-                .fluidOutputs(FluidUtils.getWater(1000))
+                .fluidOutputs(Materials.Water.getFluid(1000L))
                 .eut(80)
                 .duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);

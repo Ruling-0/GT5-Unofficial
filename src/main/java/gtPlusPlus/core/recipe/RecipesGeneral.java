@@ -8,6 +8,7 @@ import static gtPlusPlus.core.recipe.common.CI.bitsd;
 import static gtPlusPlus.core.util.minecraft.ItemUtils.getSimpleStack;
 import static gtPlusPlus.xmod.gregtech.registration.gregtech.GregtechConduits.generatePipeRecipes;
 import static gtPlusPlus.xmod.gregtech.registration.gregtech.GregtechConduits.generateWireRecipes;
+import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -266,7 +267,7 @@ public class RecipesGeneral {
                 ItemUtils.getItemStackOfAmountFromOreDict(CI.getTieredCircuitOreDictName(0), 2),
                 GTUtility.getIntegratedCircuit(16))
             .itemOutputs(ItemUtils.getSimpleStack(ModBlocks.blockPestKiller))
-            .fluidInputs(FluidUtils.getHotWater(500))
+            .fluidInputs(getFluidStack("ic2hotwater", 500))
             .duration(1 * MINUTES)
             .eut(TierEU.RECIPE_LV / 2)
             .addTo(assemblerRecipes);
