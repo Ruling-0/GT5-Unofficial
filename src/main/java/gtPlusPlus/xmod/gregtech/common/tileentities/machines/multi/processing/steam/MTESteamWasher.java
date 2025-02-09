@@ -12,6 +12,7 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
+import gregtech.api.enums.Materials;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
